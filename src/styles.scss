@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+$paleBlue: hsl(243, 100%, 93%);
+$grayishBlue: hsl(229, 7%, 55%);
+$darkBlue: hsl(228, 56%, 26%);
+$veryDarkBlue: hsl(229, 57%, 11%);
+$gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  font-size: 14px;
+  font-family: "Raleway", sans-serif;
+  background: url(images/bg-mobile.png) no-repeat;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  height: 100vh;
+  width: 100vw;
+  .info-container {
+    background-color: $darkBlue;
+    width: 80%;
+    padding: 2.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2.5em;
+    border-radius: 1em;
+    border-top-right-radius: 50%;
+    .logo {
+      width: 60%;
+      display: block;
+    }
+    .icons {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+      .icon {
+        width: 50px;
+        height: 50px;
+        background-color: $veryDarkBlue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.75em;
+      }
+    }
+  }
+  .storage-container {
+    padding: 2.5em 2em 4em;
+    width: 80%;
+    background-color: $darkBlue;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    position: relative;
+    p {
+      color: $grayishBlue;
+      font-size: 1em;
+      text-align: center;
+      span {
+        color: $paleBlue;
+        font-weight: 700;
+      }
+    }
+    .range {
+      display: flex;
+      justify-content: space-between;
+      span {
+        color: $paleBlue;
+        font-weight: 700;
+      }
+    }
+    .remaining {
+      background-color: $paleBlue;
+      position: absolute;
+      left: 50%;
+      bottom: 0%;
+      transform: translate(-50%, 50%);
+      border-radius: 1em;
+      padding: 1.25em 1.5em;
+      width: 55%;
+      p {
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        display: flex;
+        font-size: .9em;
+        align-items: center;
+        justify-content: space-between;
+        span {
+          color: $veryDarkBlue;
+          font-size: 2.5em;
+        }
+      }
+    }
+    .wrap {
+      position: relative;
+      width: 100%;
+      #slider {
+        width: 100%;
+        opacity: 0;
+      }
+      .thumb {
+        width: 9px;
+        height: 9px;
+        background-color: $paleBlue;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(0%, -50%);
+        pointer-events: none;
+      }
+      .track {
+        width: 100%;
+        height: 18px;
+        border-radius: 1em;
+        border: 3px solid hsl(227, 59%, 18%);
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+        background-color: hsl(227, 59%, 18%);
+        overflow: hidden;
+      }
+      .innerTrack {
+        background-image: linear-gradient(
+          to right,
+          hsl(6, 100%, 80%),
+          hsl(335, 100%, 65%)
+        );
+        pointer-events: none;
+        height: 14px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 1em;
+      }
+    }
+  }
+}
+
+
