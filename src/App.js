@@ -50,8 +50,8 @@ function App() {
             style={{
               left: `${
                 usedStorage / 10 >= 50
-                  ? usedStorage / 10 - 2.5
-                  : usedStorage / 10 + 2.5
+                  ? usedStorage / 10 - 1.5
+                  : usedStorage / 10 + 1.5
               }%`,
               transform: `translate(-${usedStorage / 10}%, -50%)`,
             }}
